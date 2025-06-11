@@ -1,0 +1,24 @@
+{
+  "name": "travia-planner",
+  "type": "python",
+  "port": 8000,
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "env": {
+    "ENVIRONMENT": "production",
+    "PORT": "8000",
+    "HOST": "0.0.0.0",
+    "LOG_LEVEL": "info"
+  },
+  "resources": {
+    "memory": "1Gi",
+    "cpu": "0.5"
+  },
+  "healthCheck": {
+    "path": "/health",
+    "port": 8000,
+    "initialDelaySeconds": 30,
+    "periodSeconds": 10
+  }
+} 
